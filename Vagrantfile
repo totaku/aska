@@ -25,10 +25,10 @@ Vagrant.configure("2") do |config|
             mkdir -p /var/www/$DOMAIN
 
             echo "Creating vhost config for $DOMAIN..."
-            sudo cp /etc/nginx/conf.d/drupal /etc/nginx/conf.d/$DOMAIN.conf
+            sudo cp /var/www/drupal /etc/nginx/conf.d/$DOMAIN.conf
 
             echo "Updating vhost config for $DOMAIN..."
-            sudo sed -i s,scotchbox.local,$DOMAIN,g /etc/nginx/conf.d/$DOMAIN.conf
+            sudo sed -i s,aska.local,$DOMAIN,g /etc/nginx/conf.d/$DOMAIN.conf
             sudo sed -i s,/var/www/html,/var/www/$DOMAIN,g /etc/nginx/conf.d/$DOMAIN.conf
 
             echo "So let's restart nginx..."

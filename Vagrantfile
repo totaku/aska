@@ -22,14 +22,14 @@ Vagrant.configure("2") do |config|
             DOMAIN=${DOMAINS[$i]}
 
             echo "Creating directory for $DOMAIN..."
-            mkdir -p /var/www/$DOMAIN/public
+            mkdir -p /var/www/$DOMAIN
 
             echo "Creating vhost config for $DOMAIN..."
-            sudo cp /etc/apache2/sites-available/scotchbox.local.conf /etc/apache2/sites-available/$DOMAIN.conf
+            sudo cp /etc/nginx/conf.d/drupal /etc/nginx/conf.d/$DOMAIN.conf
 
             echo "Updating vhost config for $DOMAIN..."
-            sudo sed -i s,scotchbox.local,$DOMAIN,g /etc/apache2/sites-available/$DOMAIN.conf
-            sudo sed -i s,/var/www/public,/var/www/$DOMAIN/public,g /etc/apache2/sites-available/$DOMAIN.conf
+            sudo sed -i s,scotchbox.local,$DOMAIN,g /etc/nginx/conf.d/$DOMAIN.conf
+            sudo sed -i s,/var/www/html,/var/www/$DOMAIN,g /etc/nginx/conf.d/$DOMAIN.conf
 
             echo "So let's restart nginx..."
             sudo systemctl reload nginx

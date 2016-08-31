@@ -3,22 +3,15 @@
 
 ### System Stuff
 * Ubuntu 16.04 LTS (Xenial Xerus)
-* PHP 5.6
+* PHP 7.0
 * Vim
 * Git
 * cURL
 * GD and Imagick
 * Composer
-* Node
-* NPM
-* Mcrypt
 
 ### Database Stuff
 * MySQL
-
-### Caching Stuff
-* Redis
-* Memcache and Memcached
 
 ### Other Useful Stuff
 * No Internet connection required
